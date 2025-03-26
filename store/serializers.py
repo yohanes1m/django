@@ -19,7 +19,7 @@ class ProductSerializer(serializers.ModelSerializer):
     #     queryset = Collection.objects.all()
     # )
     # collection = serializers.StringRelatedField()
-    collection = CollectionSerializer()
+    # collection = CollectionSerializer()
 
 
     def calculate_tax(self,product:Product):
