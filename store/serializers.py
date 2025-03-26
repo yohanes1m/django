@@ -10,7 +10,7 @@ class CollectionSerializer(serializers.ModelSerializer):
 class ProductSerializer(serializers.ModelSerializer):
     class Meta:
         model = Product
-        fields = ["id","title","unit_price","price_with_tax","collection"]  
+        fields = ["id","title","slug","description","inventory","unit_price","price_with_tax","collection"]  
     # id = serializers.IntegerField()
     # title = serializers.CharField(max_length  = 255)
     # price = serializers.DecimalField(decimal_places=2,max_digits=6,source="unit_price")
