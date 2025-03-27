@@ -43,6 +43,7 @@ INSTALLED_APPS = [
      'tags',
      'store',
      'likes',
+     'django_filters'
      
 ]
 

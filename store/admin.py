@@ -14,7 +14,7 @@ class ProductAdmin(admin.ModelAdmin):
     autocomplete_fields = ["collection"]
     search_fields = ["title"]
     actions = ["clear_inventory"]
-    list_display=["id",'title','unit_price','inventory_status',"collection_title",]
+    list_display=["id",'title','unit_price','inventory_status',"collection_title"]
     list_editable=["unit_price"]
     list_per_page = 10
     list_select_related = ["collection"]

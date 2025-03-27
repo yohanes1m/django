@@ -77,7 +77,7 @@ class CartItem(models.Model):
 class OrderItem(models.Model):
     quantity = models.PositiveSmallIntegerField()
     order = models.ForeignKey(Order,on_delete=models.PROTECT)
-    product  = models.ForeignKey(Product,on_delete=models.PROTECT)
+    product  = models.ForeignKey(Product,on_delete=models.PROTECT, related_name="orderitem")
     unit_price = models.DecimalField(max_digits=6,decimal_places=2) 
 class Address(models.Model):
     street = models.CharField(max_length=255)
@@ -87,3 +87,9 @@ class Address(models.Model):
     # customer = models.OneToOneField(Customer,on_delete=models.CASCADE,primary_key=True)
     # one to many
     customer = models.ForeignKey(Customer,on_delete=models.CASCADE)
+
+class Review(models.Model):
+    product  = models.ForeignKey(Product,on_delete=models.CASCADE,related_name="reviews")
+    name = models.CharField(max_length=255)
+    description = models.TextField()
+    date = models.DateField(auto_now_add=True)
